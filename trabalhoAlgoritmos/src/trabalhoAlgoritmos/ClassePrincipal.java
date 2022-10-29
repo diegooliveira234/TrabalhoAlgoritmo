@@ -8,12 +8,9 @@ public class ClassePrincipal {
 		int change,valueCar;
 		valueCar=0;
 		double IPI;
-		IPI=valueCar*0.08;
 		IPI=0;
-		double valueFinal1,valueFinal2,valueFinal3;
-		valueFinal1=0;
-		valueFinal2=0;
-		valueFinal3=0;
+		double valueFinal1=0,valueFinal2=0,valueFinal3=0;
+		int count1=0,count2=0,count3=0,count4=0,count0=0;
 		try(Scanner input = new Scanner (System.in) ){
 		do { 
 			System.out.println("");
@@ -33,17 +30,20 @@ public class ClassePrincipal {
 			System.out.println("");
 			String zero = change ==0 ? (" O valor do seu automóvel sem opcionais é de R$ "+valueCar ): " ";
 			String verify = change >=6 ? "Por favor digite uma opção válida": " ";
-			System.err.println(zero);
-			System.out.println(verify);
 			switch (change) {
-			case 1: valueFinal1=(valueCar+IPI)*1.02;
+			case 1: 
+				IPI=valueCar*0.08;
+				valueFinal1=(valueCar+IPI)*1.02;
 				System.out.println("O valor final do seu veículo com a adção de Trio Elétrico é de R$ : "+valueFinal1);
+				count1+=1;
 				break;
 			case 2: valueFinal2=(valueCar)*1.02;
 				System.out.println("O valor final do seu veículo com a adção de Ar Condicionado é de R$ : "+valueFinal2);
+				count2+=1;
 				break;
 			case 3:  valueFinal3=(valueCar)*1.02;
 				System.out.println("O valor final do seu veículo com a adção de Direção Elétrica é de R$ : "+valueFinal3);
+				count3+=1;
 				break;
 			case 4: 
 				double valueTax1=(((valueCar+(valueCar*0.08))*1.02));
@@ -54,10 +54,19 @@ public class ClassePrincipal {
 				System.out.println("O valor final do seu veículo com a adção de Trio Elétrico, Ar Condicionado e Direção Hidráulica é de R$ : "+valueFinal4);
 				System.out.println("Esse mês estamos com uma super promoção aqui na Braço Forte, veículos completos estão com um super desconto, "
 					+ "por você ter escolhido essa forma de personalização o novo valor do seu veículo é de R$ : "+descount);
+				count4+=1;
 				break;
-		
+			case 0: count0+=1;
+			System.out.println(zero);
+			default:
+				System.err.println(verify);
 			}
 	}while(change !=5);
+		System.out.println("A opção 1 foi escolhida : "+count1+" vezes");
+		System.out.println("A opção 2 foi escolhida : "+count2+" vezes");
+		System.out.println("A opção 3 foi escolhida : "+count3+" vezes");
+		System.out.println("A opção 4 foi escolhida : "+count4+" vezes");
+		System.out.println("A opção 0 foi escolhida : "+count0+" vezes");
 		}
 }
 }
