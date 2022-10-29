@@ -6,12 +6,19 @@ public class ClassePrincipal {
 
 	public static void main(String[] args) {
 		int change,valueCar;
+		valueCar=0;
+		double IPI;
+		IPI=valueCar*0.08;
+		IPI=0;
+		double valueFinal1,valueFinal2,valueFinal3;
+		valueFinal1=0;
+		valueFinal2=0;
+		valueFinal3=0;
 		try(Scanner input = new Scanner (System.in) ){
-			
-		
 		do { 
-			System.out.println(" ------------------------- Concessionária Braço Forte ------------------------- " );
 			System.out.println("");
+			System.out.println(" ------------------------- Concessionária Braço Forte ------------------------- " );
+			System.out.println(" ");
 			System.out.println("Qual o valor do veículo escolhido ?");
 			valueCar=input.nextInt();
 			System.out.println("");
@@ -22,8 +29,31 @@ public class ClassePrincipal {
 			System.out.println(" 4 - Completo (Trio Elétrico, Ar Condicionado e Direção Hidráulica ) ");
 			System.out.println(" 0 - Para encerrar sua personalização");
 			change = input.nextInt();
+			System.out.println("");
 			String verify = change >4 ? "Por favor digite uma opção válida": " ";
 			System.out.println(verify);
+			switch (change) {
+			case 1: valueFinal1=(valueCar+IPI)*1.02;
+				System.out.println("O valor final do seu veículo com a adção de Trio Elétrico é de R$ : "+valueFinal1);
+				break;
+			case 2: valueFinal2=(valueCar)*1.02;
+				System.out.println("O valor final do seu veículo com a adção de Ar Condicionado é de R$ : "+valueFinal2);
+				break;
+			case 3:  valueFinal3=(valueCar)*1.02;
+				System.out.println("O valor final do seu veículo com a adção de Direção Elétrica é de R$ : "+valueFinal3);
+				break;
+			case 4: 
+				double valueTax1=(((valueCar+(valueCar*0.08))*1.02));
+				double valueTax2=(valueCar*1.02)-valueCar;
+				double valueTax3=(valueCar*1.02)-valueCar;
+				double valueFinal4=valueTax1+valueTax2+valueTax3;
+				double descount = valueFinal4*0.965;
+				System.out.println("O valor final do seu veículo com a adção de Trio Elétrico, Ar Condicionado e Direção Hidráulica é de R$ : "+valueFinal4);
+				System.out.println("Esse mês estamos com uma super promoção aqui na Braço Forte, veículos completos estão com um super desconto, "
+					+ "por você ter escolhido essa forma de personalização o novo valor do seu veículo é de R$ : "+descount);
+				break;
+			default: System.out.println("Por favor digite uma opção válida...");
+			}
 	}while(change !=0);
 		}
 }
