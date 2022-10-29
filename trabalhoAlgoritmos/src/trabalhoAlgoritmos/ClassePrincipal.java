@@ -19,7 +19,7 @@ public class ClassePrincipal {
 			System.out.println("");
 			System.out.println(" ------------------------- Concessionária Braço Forte ------------------------- " );
 			System.out.println(" ");
-			System.out.println("Qual o valor do veículo escolhido ?");
+			System.out.println("Olá qual o valor do veículo escolhido ?");
 			valueCar=input.nextInt();
 			System.out.println("");
 			System.out.println(" Personalize seu veiculo como desejar, temos 4 opções ");
@@ -27,10 +27,13 @@ public class ClassePrincipal {
 			System.out.println(" 2 - Ar Condicionado " );
 			System.out.println(" 3 - Direção Hidráulica ");
 			System.out.println(" 4 - Completo (Trio Elétrico, Ar Condicionado e Direção Hidráulica ) ");
-			System.out.println(" 0 - Para encerrar sua personalização");
+			System.out.println(" 0 - Nenhum Opcional ");
+			System.out.println(" 5 - Para encerrar sua personalização");
 			change = input.nextInt();
 			System.out.println("");
-			String verify = change >4 ? "Por favor digite uma opção válida": " ";
+			String zero = change ==0 ? (" O valor do seu automóvel sem opcionais é de R$ "+valueCar ): " ";
+			String verify = change >=6 ? "Por favor digite uma opção válida": " ";
+			System.err.println(zero);
 			System.out.println(verify);
 			switch (change) {
 			case 1: valueFinal1=(valueCar+IPI)*1.02;
@@ -52,9 +55,9 @@ public class ClassePrincipal {
 				System.out.println("Esse mês estamos com uma super promoção aqui na Braço Forte, veículos completos estão com um super desconto, "
 					+ "por você ter escolhido essa forma de personalização o novo valor do seu veículo é de R$ : "+descount);
 				break;
-			default: System.out.println("Por favor digite uma opção válida...");
+		
 			}
-	}while(change !=0);
+	}while(change !=5);
 		}
 }
 }
