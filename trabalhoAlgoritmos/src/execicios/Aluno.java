@@ -17,8 +17,6 @@ public class Aluno {
 	boolean matriculaAtiva;
 	
 	private List< Disciplina> disciplinas = new ArrayList <Disciplina>();
-	 
-
 	public List<Disciplina> getDisciplinas() {
 		return disciplinas;
 	}
@@ -28,6 +26,7 @@ public class Aluno {
 	}
 
 	/*Constructor*/
+	Aluno(){}
 	Aluno(String Nome, String cpf){
 		this.nome=Nome;
 		this.numeroCPF=cpf;
@@ -112,12 +111,16 @@ public class Aluno {
 		return somNotas/disciplinas.size();
 	}
 	
-	public boolean getAlunoAprovado() {
+	public String getAlunoAprovado() {
 		double media = this.getMediaNotas();
-		if (media>=70) {
-			return true;
+		if (media>50) {	
+			if (media>=70) {
+			return "Aluno Aprovado";
 		}else {
-			return false;
+			return "Aluno em Recuperaçao";
 		}
+	}else {
+		return "Aluno Reprovado";
 	}
+}
 }
