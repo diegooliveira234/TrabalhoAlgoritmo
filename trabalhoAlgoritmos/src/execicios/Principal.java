@@ -5,6 +5,13 @@ import javax.swing.JOptionPane;
 public class Principal {
 
 	public static void main(String[] args) {
+		String login=JOptionPane.showInputDialog("Informe Login");
+		String senha = JOptionPane.showInputDialog("Informe Senha ");
+		
+		Secretario sec = new Secretario();
+		sec.setLogin(login);
+		sec.setSenha(senha);
+		if(sec.permitirAcesso()) {
 		
 		Aluno aluno1= new Aluno("Diego Oliveira","123456789-00");
 		for (int pos=1; pos<4;pos++) {
@@ -21,6 +28,9 @@ public class Principal {
 		System.out.println("o Aluno está : "+(aluno1.getAlunoAprovado()?" Aprovado ":" Reprovado "));
 	*/
 
+	}else {
+		JOptionPane.showMessageDialog(null, "Acesso Negado");
 	}
 
+}
 }

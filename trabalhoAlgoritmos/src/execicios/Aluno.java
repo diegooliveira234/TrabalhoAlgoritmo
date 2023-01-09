@@ -3,14 +3,8 @@ package execicios;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Aluno {
-	String nome;
-	int idade;
-	String dataNascimento;
-	String registroGeral;
-	String numeroCPF;
-	String nomeMae;
-	String nomePai;
+public class Aluno extends Pessoa {
+	
 	String dataMatricula;
 	String nomeEscola;
 	String serieMatriculado;
@@ -37,7 +31,7 @@ public class Aluno {
 		return nome;
 	}
 	public void setNome(String nome) {
-		this.nome = nome;
+		super.nome = nome;
 	}
 	public int getIdade() {
 		return idade;
